@@ -54,7 +54,7 @@ class Dispatch
     /**
      * Execute
      * 
-     * @param array | Clousure $routemap 
+     * @param array | Closure $routemap 
      * 
      * @return void
     */
@@ -70,7 +70,7 @@ class Dispatch
             $this->postHooks
         );
         
-        array_walk($executionChain, array($this, 'executeClousure'));
+        array_walk($executionChain, array($this, 'executeClosure'));
     }
 
     /**
@@ -104,7 +104,7 @@ class Dispatch
      *
      * @return void
     */
-    private function executeClousure($resolvedRoute)
+    private function executeClosure($resolvedRoute)
     {
         $reflection = new \ReflectionFunction($resolvedRoute[0]);
         $arguments  = $reflection->getParameters();
