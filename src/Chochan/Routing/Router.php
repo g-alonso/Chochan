@@ -13,8 +13,6 @@
 
 namespace Chochan\Routing;
 
-use Chochan\Routing\Route;
-
 /*
  * Router class
  *
@@ -25,7 +23,7 @@ class Router
 {
     /**
      * 
-     * Registred Routes
+     * Registered Routes
      * 
      * @var array
      * 
@@ -45,11 +43,11 @@ class Router
 
     /**
      * Constructor
-     * 
+     *
      * @param string $baseDir Base dir
      *
-     * @return void
-    */
+     * @return \Chochan\Routing\Router
+     */
     public function __construct($baseDir = null)
     {
         $this->baseDir = $baseDir;
@@ -81,7 +79,7 @@ class Router
      * Register a new route
      * 
      * @param string $routePattern Route pattern
-     * @param Closure $closure closure
+     * @param \Closure $closure closure
      * 
      * @return \Chochan\Routing\Route
      */
@@ -96,7 +94,7 @@ class Router
     }
 
     /**
-     * Check if the url, matchs with a registred route
+     * Check if the url, matches with a registered route
      * 
      * @param string $httpMethod Http method
      * @param string $url Url

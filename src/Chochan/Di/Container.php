@@ -18,14 +18,13 @@ namespace Chochan\Di;
  * Container class
  *
  * Dependency injection container 
- * 
- * @todo setter dependences
+ *
 */
 class Container
 {
     /**
 	 * 
-	 * Array of setted services
+	 * Array of services
 	 * 
 	 * @var array
 	 *
@@ -42,18 +41,19 @@ class Container
 
     /**
      * 
-     * Constructor dependences
+     * Constructor dependencies
      * 
      * @var array
      * 
      */
-    public $dependences = array();
+    public $dependencies = array();
 
     /**
      *  Get a service
-     * 
+     *
      * @param string Service name
      *
+     * @throws \Exception when service is not found
      * @return object Service obj
      */
     public function get($service)
@@ -83,7 +83,7 @@ class Container
 	 * @param string $service service key.
 	 * @param object $val service obj
 	 * 
-	 * @return Chochan\Di\Container
+	 * @return \Chochan\Di\Container
     */
     public function set($service, $val)
     {
@@ -105,16 +105,16 @@ class Container
     {
         $class = new \ReflectionClass($className);
 
-        if (isset($this->dependences[$className])) {
+        if (isset($this->dependencies[$className])) {
 
             // check Closure's
-            foreach ($this->dependences[$className] as $param => $value) {
+            foreach ($this->dependencies[$className] as $param => $value) {
                 if ($value instanceof \Closure) {
-                    $this->dependences[$className][$param] = $value();
+                    $this->dependencies[$className][$param] = $value();
                 }
             }
 
-            $instance = $class->newInstanceArgs(array_values($this->dependences[$className]));
+            $instance = $class->newInstanceArgs(array_values($this->dependencies[$className]));
         } else {
             $instance = $class->newInstance();
         }

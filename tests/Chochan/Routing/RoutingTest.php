@@ -19,7 +19,7 @@ require realpath(__DIR__.'/../../../src/Chochan/').'/autoload.php';
 */
 class RoutingTest extends \PHPUnit_Framework_TestCase
 {
-    protected $request;
+    protected $router;
 
     protected function setUp()
     {

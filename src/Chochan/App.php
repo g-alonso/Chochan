@@ -27,8 +27,8 @@ class App
     /**
      * 
      * Dispatch
-     * 
-     * @var Chochan\Dispatcher\Dispatch
+     *
+     * @var \Chochan\Dispatcher\Dispatch
      * 
      */
     private $dispatch;
@@ -37,7 +37,7 @@ class App
      * 
      * Router
      * 
-     * @var Chochan\Routing\Router
+     * @var \Chochan\Routing\Router
      * 
      */
     private $router;
@@ -46,7 +46,7 @@ class App
      * 
      * Response
      * 
-     * @var Chochan\Http\Response
+     * @var \Chochan\Http\Response
      * 
      */
     private $response;
@@ -55,7 +55,7 @@ class App
      * 
      * Request
      * 
-     * @var Chochan\Http\Request
+     * @var \Chochan\Http\Request
      * 
      */
     private $request;
@@ -63,7 +63,7 @@ class App
     /**
      * Consturctor
      * 
-     * @param Chochan\Di\Container $container Expects di container
+     * @param \Chochan\Di\Container $container Expects di container
      * 
      */
     public function __construct(Dispatch $dispatch, Router $router, Response $response, Request $request)
@@ -151,7 +151,7 @@ class App
      * 
      * @param array $params [route, callback]
      * 
-     * @return Chochan\Routing\Router
+     * @return \Chochan\Routing\Router
     */
     public function route($params)
     {

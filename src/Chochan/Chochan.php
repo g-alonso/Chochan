@@ -35,13 +35,13 @@ class Chochan
      *
      * @var string version
     */
-    public static $version = "0.0.1b";
+    public static $version = "0.0.3b";
 
     /**
      * 
-     * Constructor dependences
+     * Constructor dependencies
      * 
-     * @var Chochan\App
+     * @var \Chochan\App
      * 
      */
     private static $app;
@@ -49,14 +49,14 @@ class Chochan
     /**
      * Get container
      *
-     * @var Chochan\Di\Container
+     * @var \Chochan\Di\Container
     */
     private static $container;
 
     /**
      * Initialize components
      * 
-     * @param Chochan\Di\Container $container container
+     * @param \Chochan\Di\Container $container container
      * 
     */
     public static function wakeUp(\Chochan\Di\Container $container)
@@ -81,7 +81,7 @@ class Chochan
             return $container->newInstance("Chochan\View\Template");
         });
 
-        $container->dependences["Chochan\App"] = array(
+        $container->dependencies["Chochan\App"] = array(
             'Chochan\Dispatcher\Dispatch' => $container->get('Chochan\Dispatcher\Dispatch'),
             'Chochan\Routing\Router' => $container->get('Chochan\Routing\Router'),
             'Chochan\Http\Response' => $container->get('Chochan\Http\Response'),

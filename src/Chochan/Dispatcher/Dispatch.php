@@ -13,8 +13,6 @@
 
 namespace Chochan\Dispatcher;
 
-use Chochan\Di\Container;
-use Chochan\Http\Response;
 use Chochan\Exception\DispatchException;
 
 /**
@@ -121,7 +119,9 @@ class Dispatch
 
         if (isset($resolvedRoute[1])) {
             // Insert custom params
-            $args[] = $resolvedRoute[1];
+            foreach ($resolvedRoute[1] as $paramName => $paramValue) {
+                $args[$paramName] = $paramValue;
+            }
         }
 
         call_user_func_array($resolvedRoute[0], array_values($args));

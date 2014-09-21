@@ -11,13 +11,11 @@
 
 namespace Chochan\Http;
 
-require_once 'PHPUnit/autoload.php';
 require realpath(__DIR__.'/../../../src/Chochan/').'/autoload.php';
 
 /**
  * Request class test
  * 
- * Represents a HTTP request test
 */
 class RequestTest extends \PHPUnit_Framework_TestCase
 {
@@ -32,11 +30,6 @@ class RequestTest extends \PHPUnit_Framework_TestCase
 
     public function testIsAjax()
     {
-        $this->assertEquals(true, $this->request->isAjax());
-    }
-
-    public function testGetProxyIpAddress()
-    {
-        $this->assertEquals(true, $this->request->getProxyIpAddress());
+        $this->assertEquals(false, $this->request->isAjax());
     }
 }

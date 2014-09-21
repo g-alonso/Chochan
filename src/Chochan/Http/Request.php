@@ -275,7 +275,7 @@ class Request
      *
      * @return string IP address
      */
-    private function getProxyIpAddress()
+    public function getProxyIpAddress()
     {
         static $forwarded = array(
             'HTTP_CLIENT_IP',

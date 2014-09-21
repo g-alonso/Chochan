@@ -30,5 +30,9 @@ Chochan\Chochan::route('/helloworld', function (Chochan\Http\Response $response)
     $response->write("Hello World!")->send();
 });
 
+Chochan\Chochan::route('/greeting/:name/:lastname?', function (Chochan\Http\Response $response, $name, $lastname = "") {
+    $response->write("Hello $name $lastname!")->send();
+});
+
 //Wake Up chochan!
 Chochan\Chochan::oink();
