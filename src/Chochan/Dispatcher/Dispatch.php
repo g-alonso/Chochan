@@ -41,21 +41,13 @@ class Dispatch
     private $postHooks = array();
 
     /**
-     * Constructor
-     * 
-    */
-    public function __construct()
-    {
-       
-    }
-
-    /**
      * Execute
-     * 
-     * @param array | Closure $routemap 
-     * 
+     *
+     * @param $resolvedRoute
+     * @throws DispatchException
+     *
      * @return void
-    */
+     */
     public function dispatch($resolvedRoute)
     {
         if ($resolvedRoute == null) {
@@ -74,7 +66,7 @@ class Dispatch
     /**
      * Set pre execution hook
      * 
-     * @param Closure $closure closure
+     * @param \Closure $closure closure
      * 
      * @return void
      */
@@ -86,7 +78,7 @@ class Dispatch
     /**
      * Set post execution hook
      * 
-     * @param Closure $closure closure
+     * @param \Closure $closure closure
      * 
      * @return void
      */
@@ -109,7 +101,7 @@ class Dispatch
 
         $args = array();
 
-        // Get dependences by reflection
+        // Get dependencies by reflection
         foreach ($arguments as $arg) {
             if ($arg->getClass() instanceof \ReflectionClass) {
                 $object = $arg->getClass()->getName();

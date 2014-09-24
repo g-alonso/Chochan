@@ -56,7 +56,7 @@ class Route
      * @var ???
      * 
      */
-    private $matchedSuff;
+    private $matchedStuff;
 
 
     /**
@@ -84,7 +84,7 @@ class Route
     /**
      * Set closure of route
      * 
-     * @param Closure closure
+     * @param \Closure closure
      * 
      * @return void
      * 
@@ -121,7 +121,7 @@ class Route
     }
 
     /**
-     * Check if the method and request url matchs
+     * Check if the method and request url matches
      * 
      * @param string $httpMethod Http methods
      * @param string $requestUrl Request url
@@ -137,7 +137,7 @@ class Route
 
             if (!empty($matches)) {
 
-                $this->matchedSuff = array(
+                $this->matchedStuff = array(
                     $this->closureMethod[$httpMethod],
                     $this->cleanMatches($matches)
                 );
@@ -156,7 +156,7 @@ class Route
      */
     public function getMatchedStuff()
     {
-        return $this->matchedSuff;
+        return $this->matchedStuff;
     }
 
     /**

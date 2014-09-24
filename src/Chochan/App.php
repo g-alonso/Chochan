@@ -61,7 +61,7 @@ class App
     private $request;
 
     /**
-     * Consturctor
+     * Constructor
      * 
      * @param \Chochan\Di\Container $container Expects di container
      * 
@@ -162,7 +162,7 @@ class App
     /**
      * Set before route execution 
      * 
-     * @param Closure $closure closure
+     * @param \Closure $closure closure
      * 
      * @return void
      */
@@ -175,7 +175,7 @@ class App
     /**
      * Set after route execution
      * 
-     * @param Closure $closure closure
+     * @param \Closure $closure closure
      * 
      * @return void
      */
