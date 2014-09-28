@@ -1,0 +1,24 @@
+{
+    "name": "g-alonso/Chochan",
+    "type": "framework",
+    "description": "Chochan framework!",
+    "keywords": ["framework", "microframework", "simple"],
+    "homepage": "https://github.com/g-alonso/Chochan",
+    "license": "WTFPL",
+    "authors": [
+        {
+            "name": "Gabriel Alonso",
+            "email": "gbr.alonso@gmail.com",
+            "homepage": "https://github.com/g-alonso",
+            "role": ""
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Chochan": "src"
+        }
+    }
+}
