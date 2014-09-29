@@ -35,7 +35,7 @@ class Chochan
      *
      * @var string version
     */
-    public static $version = "0.0.3b";
+    public static $version = "0.0.4b";
 
     /**
      * 
@@ -110,6 +110,10 @@ class Chochan
     */
     public static function __callStatic($name, $params)
     {
+        if(self::$app == false) {
+            throw new \RuntimeException("Chochan is sleeping! Please call wakeUp method first.");
+        }
+
         switch ($name) {
             case 'before':
                 return self::$app->before($params);

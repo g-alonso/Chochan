@@ -195,7 +195,7 @@ class Request
                 'ajax' => $this->getServerValue('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest',
                 'scheme' => $this->getServerValue('SERVER_PROTOCOL', 'HTTP/1.1'),
                 'user_agent' => $this->getServerValue('HTTP_USER_AGENT'),
-                'body' => file_get_contents('php://input'),
+                'body' => null,
                 'type' => $this->getServerValue('CONTENT_TYPE'),
                 'length' => $this->getServerValue('CONTENT_LENGTH', 0),
                 'query' => $_GET,
@@ -258,6 +258,41 @@ class Request
     public function getMethod()
     {
         return $this->method;
+    }
+
+    /**
+     * Gets POST data
+     *
+     * @return array
+     */
+    public function getData()
+    {
+        // if HTTP method is POST and $_POST is empty, return the php://input as array
+        if ($this->getMethod() == 'POST' && empty($this->data)) {
+            return json_decode($this->getBody(), 1);
+        }
+
+        return $this->data;
+    }
+
+    /**
+     * Gets raw request
+     *
+     * @return array
+     */
+    public function getBody()
+    {
+        return file_get_contents('php://input');
+    }
+
+    /**
+     * Gets query params
+     *
+     * @return array
+     */
+    public function getQuery()
+    {
+        return $this->query;
     }
 
     /**
