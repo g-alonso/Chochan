@@ -1,11 +1,12 @@
-##Chochan Framework
+##Chochan Framework.
 
+A framework for all and none.
 
-   _//|.-~~~~-,
- _/66  \       \_@
-(")_   /   /   |
-  '--'|| |-\  /
-      //_/ /_/
+   _//|.-~~~~-,  
+ _/66  \       \_@  
+(")_   /   /   |  
+  '--'|| |-\  /  
+      //_/ /_/  
 
 This project was developed for learning purposes.
 
