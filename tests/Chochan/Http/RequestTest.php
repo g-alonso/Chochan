@@ -11,8 +11,6 @@
 
 namespace Chochan\Http;
 
-require realpath(__DIR__.'/../../../src/Chochan/').'/autoload.php';
-
 /**
  * Request class test
  * 

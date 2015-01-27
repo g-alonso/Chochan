@@ -11,8 +11,6 @@
 
 namespace Chochan\Routing;
 
-require realpath(__DIR__.'/../../../src/Chochan/').'/autoload.php';
-
 /**
  * Routing class test
  * 
