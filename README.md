@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/g-alonso/Chochan.svg?branch=master)](https://travis-ci.org/g-alonso/Chochan)
 [![Coverage Status](https://coveralls.io/repos/g-alonso/Chochan/badge.svg)](https://coveralls.io/r/g-alonso/Chochan)
+
 A framework for all and none.
 
 <pre>
