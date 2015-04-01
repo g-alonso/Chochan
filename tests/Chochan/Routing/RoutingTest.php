@@ -24,19 +24,25 @@ class RoutingTest extends \PHPUnit_Framework_TestCase
         parent::setUp();
     
         $this->router = new Router();
-    }
 
-    public function testRouting()
-    {
         $this->router->setBaseDir("/");
 
         $this->router->register("greeting/:name/:lastName?", function ($name, $lastName = "") {
             return "Hello $name $lastName!!!";
-        });
+        })->method("GET");
+    }
 
+    public function testRoutingMatch()
+    {
         $routemap = $this->router->match("GET", "/greeting/chochan/framework");
 
         $this->assertEquals("Hello chochan framework!!!", call_user_func_array($routemap[0], array_values($routemap[1])));
-        
+    }
+
+    public function testRoutingNotMatch()
+    {
+        $routemap = $this->router->match("POST", "/greeting/chochan/framework!");
+
+        $this->assertEquals(null, $routemap);
     }
 }

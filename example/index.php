@@ -13,12 +13,12 @@
 require 'bootstrap.php';
 
 // setting before hook
-Chochan\Chochan::before(function (Chochan\View\Template $template) {
+Chochan\Chochan::before(function () {
     echo round(microtime(true) * 1000)."<br /><br />";
 });
 
 // setting after hook
-Chochan\Chochan::after(function (Chochan\View\Template $template) {
+Chochan\Chochan::after(function () {
     echo "<br /><br />".round(microtime(true) * 1000);
 });
 
