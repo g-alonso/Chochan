@@ -1,12 +1,16 @@
 ##Chochan Framework.
 
+[![Build Status](https://travis-ci.org/g-alonso/Chochan.svg?branch=master)](https://travis-ci.org/g-alonso/Chochan)
+
 A framework for all and none.
 
+<pre>
    _//|.-~~~~-,  
  _/66  \       \_@  
 (")_   /   /   |  
   '--'|| |-\  /  
       //_/ /_/  
+</pre>
 
 This project was developed for learning purposes.
 
